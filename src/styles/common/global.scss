@@ -1,0 +1,121 @@
+@import "../../local_modules/normalize.css/normalize";
+@import "../mixins/media.scss";
+@import "../utils/variables.scss";
+@import "../mixins/mixins";
+
+/*
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+*/
+
+body {
+    width: 100%;
+    @include padding-margin-clear;
+
+    font-family: "PT Sans Narrow", sans-serif;
+    color: #000000;
+
+    background-color: gray;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    @include same-size(1px);
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+}
+
+.wrapperMain {
+    margin: 0 10%;
+
+    @include media-tablet {
+        margin: 0 8.4%;
+    }
+
+    @include media-mobile {
+        margin: 0;
+    }
+}
+
+.wrapper-mobile {
+    @include media-mobile {
+        margin: 0 6.25%;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    display: inline-block;
+    width: 160px;
+    padding: 12px 5px 12px 5px;
+
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    outline: 1px solid #c9bdb1;
+    border: none;
+    box-sizing: border-box;
+
+    &:focus,
+    &:hover {
+        @include outline(#eae5e2);
+    }
+
+    &:active {
+        @include outline(#ede4de);
+        background-color: #ede4de;
+        color: #e3dcd5;
+    }
+
+    @include media-mobile {
+        width: 100%;
+    }
+}
+
+.line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    @include padding-margin-clear;
+
+    background-color: #c9bdb1;
+}
+
+.wing {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top: 5vw solid #f8f5f2;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+
+    @include media-mobile {
+        border-top: 12vw solid #f8f5f2;
+    }
+}

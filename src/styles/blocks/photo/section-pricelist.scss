@@ -1,0 +1,254 @@
+.pricelist {
+    position: relative;
+    width: auto;
+    z-index: 10;
+
+    background-color: #353535;
+
+    @include media-mobile {
+        width: 320px;
+    }
+
+
+    &__wrapper {
+        margin: 0 10%;
+
+        @include media-tablet {
+            margin: 0 64px;
+        }
+
+        @include media-mobile {
+            margin: 0 20px;
+        }
+    }
+
+    &__title {
+        @include padding-margin-clear;
+
+        font-size: 40px;
+        font-weight: bold;
+        line-height: normal;
+        color: black;
+        text-transform: uppercase;
+
+        @include media-mobile {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        color: #ffffff;
+    }
+
+    &__timeBlock {
+        display: flex;
+
+        @include media-tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__table {
+        display: table;
+        flex-grow: 1;
+        margin-right: 60px;
+
+        font-size: 20px;
+        line-height: 27px;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        @include border (#4a4a4a);
+        empty-cells: show;
+
+        @include media-tablet {
+            margin-right: 0;
+        }
+
+        @include media-mobile {
+            margin-right: 0;
+            border: none;
+        }
+    }
+
+    &__timeBlockPosition {
+        margin-top: 54px;
+
+        @include media-mobile {
+            flex-direction: column;
+            margin-top: 30px;
+        }
+    }
+
+    &__table-tbody {
+        display: table-row-group;
+    }
+
+    &__table-tr {
+        display: table-row;
+    }
+
+    &__table-th {
+        width: 70px;
+        display: table-cell;
+        padding: 15px 0 15px 0;
+
+        text-align: center;
+        opacity: 0.3;
+
+        @include border (#4a4a4a);
+    }
+
+    &__table-td {
+        display: table-cell;
+        padding: 15px 0 15px 20px;
+
+        text-align: left;
+
+        @include border (#4a4a4a);
+
+        @include media-mobile {
+            border: none;
+            padding: 15px 0 15px 0;
+        }
+    }
+
+    &__table-td.price {
+        width: 150px;
+    }
+}
+
+.pricelist__table-th,
+.cell-none {
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.pricelistPosition {
+    padding: 77px 0 83px 0;
+
+    @include media-tablet {
+        padding: 90px 0 56px 0;
+    }
+
+    @include media-mobile {
+        padding: 70px 0 19px 0;
+    }
+}
+
+.wing-pricelist {
+    display: none;
+
+    @include media-tablet {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-top: 5vw solid #f8f5f2;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+    }
+}
+
+.price {
+    @include media-mobile {
+        text-align: right;
+    }
+}
+
+.pricelist__table,
+.time {
+    color: #ffffff;
+
+    background-color: #353535;
+}
+
+.typeOfService {
+    font-weight: bold;
+
+    @include media-mobile {
+        text-align: left;
+    }
+}
+
+.mobile-only {
+    display: none;
+
+    font-weight: normal;
+
+    @include media-mobile {
+        display: block;
+    }
+}
+
+.pricelist__time {
+
+    @include media-tablet {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    @include media-mobile {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.time {
+    width: 270px;
+    padding: 35px 0 0 0;
+
+    @include border (#4a4a4a);
+
+    text-align: center;
+
+    @include media-tablet {
+        width: auto;
+        margin-top: 9px;
+        padding: 21px 0 21px 27px;
+
+        text-align: left;
+    }
+
+    @include media-mobile {
+        width: 280px;
+        margin-top: 30px;
+        padding: 0;
+    }
+}
+
+.time__img {
+    @include media-mobile {
+        padding: 21px 0 21px 27px;
+    }
+}
+
+.time__sales-hours {
+    padding: 0 20%;
+    margin-top: 31px;
+
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+
+    @include media-tablet {
+        margin: 0 0 0 87px;
+        padding: 0;
+
+        font-size: 30px;
+        line-height: normal;
+        font-weight: bold;
+        align-self: center;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    @include media-mobile {
+        padding: 0;
+        margin: 0 0 0 35px;
+        align-self: center;
+        text-align: start;
+    }
+}

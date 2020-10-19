@@ -1,0 +1,280 @@
+@import "../mixins/media.scss";
+@import "../utils/variables.scss";
+@import "../mixins/mixins";
+
+.wing-feedback {
+    display: none;
+
+    @include media-mobile {
+        border-top: 12vw solid #f8f5f2;
+    }
+}
+
+.footer {
+    color: white;
+    background-color: #292929;
+
+    @include media-mobile {
+        position: relative;
+    }
+
+    &__contacts {
+        margin: 0 10% 0 0;
+    }
+
+    &__social {
+        margin: 0 28% 0 0;
+    }
+}
+
+.wrapperFooter {
+    display: flex;
+    justify-content: space-between;
+    padding: 53px 10% 60px 10%;
+
+    @include media-tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 53px 8.4% 60px 8.4%;
+    }
+
+    @include media-mobile {
+        flex-direction: column;
+        margin: 0;
+        padding: 100px 0 24px 0;
+
+        text-align: center;
+    }
+}
+
+.footer__contacts {
+
+    @include media-tablet {
+
+        @include padding-margin-clear;
+        order: 1;
+    }
+
+    @include media-mobile {
+        margin: 0 6.25%;
+        padding: 0;
+    }
+}
+
+.contacts {
+    width: 33%;
+    @include standard-fs-lh;
+
+    @include media-tablet {
+        width: 65%;
+    }
+
+    @include media-mobile {
+        width: auto;
+
+        &__phone {
+            display: none;
+        }
+    }
+
+    &__title {
+        @include padding-margin-clear;
+
+        text-transform: uppercase;
+        font-weight: bold;
+
+        @include media-mobile {
+            text-transform: none;
+        }
+    }
+
+    &__phoneButton {
+        display: none;
+
+        @include media-mobile {
+            display: block;
+            margin: auto;
+
+            color: white;
+
+            @include outline(#3c3c3c);
+        }
+    }
+
+    @include media-mobile {
+
+        &__phoneButton :focus,
+        &__phoneButton :hover {
+            @include outline(#393939);
+        }
+
+        &__phoneButton:active {
+            color: #393939;
+
+            background-color: #252525;
+            outline: none;
+        }
+    }
+}
+
+.footer__social {
+    @include media-tablet {
+        @include padding-margin-clear;
+        order: 3;
+        flex-grow: 1;
+    }
+
+    @include media-mobile {
+        margin: 26px 0 35px 0;
+    }
+}
+
+.footer__copyright {
+    @include media-tablet {
+        width: 30%;
+        @include padding-margin-clear;
+        order: 2;
+
+        text-align: right;
+    }
+
+    @include media-mobile {
+        margin: 0 6.25%;
+    }
+}
+
+.copyright__designed {
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    @include standard-fs-lh;
+
+    text-align: center;
+
+    @include media-tablet {
+        margin-left: 30%;
+        text-align: center;
+    }
+}
+
+.social__calling {
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    @include standard-fs-lh;
+
+    text-align: center;
+
+    @include media-tablet {
+        display: none;
+    }
+
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.copyright__link {
+    color: white;
+    outline: 1px solid #3c3c3c;
+
+    @include media-mobile {
+        width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &:hover,
+    &:focus {
+        outline: 1px solid #393939;
+    }
+}
+
+.copyright__link:active,
+.social__link:active {
+    color: #393939;
+
+    background-color: #252525;
+    outline: none;
+}
+
+.social__list {
+    display: flex;
+    @include padding-margin-clear;
+
+    list-style: none;
+
+    @include media-tablet {
+        display: flex;
+        width: auto;
+    }
+
+    @include media-mobile {
+        flex-grow: 1;
+    }
+}
+
+.social__item {
+    @include media-tablet {
+        flex-grow: 1;
+    }
+
+    @include media-mobile {
+        width: 33%;
+        flex-grow: 1;
+    }
+}
+
+
+.social__link {
+    display: flex;
+    min-width: 50px;
+    min-height: 50px;
+
+    text-align: center;
+
+    outline: 1px solid #3e3e3e;
+
+    @include media-tablet {
+        height: 100px;
+    }
+
+    @include media-mobile {
+        height: 100px;
+    }
+
+    &--vk {
+        background-image: url("../img/vk-icon-big.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15px 17px;
+
+        @include media-mobile {
+            background-size: 23px 26px;
+        }
+    }
+
+    &--fb {
+        background-image: url("../img/facebook-icon-big.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px 21px;
+
+        @include media-mobile {
+            background-size: 18px 39px;
+        }
+    }
+
+
+    &--inst {
+        background-image: url("../img/insta-icon-big.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 19px 19px;
+
+        @include media-mobile {
+            background-size: 36px 36px;
+        }
+    }
+}

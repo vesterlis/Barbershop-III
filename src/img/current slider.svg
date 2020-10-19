@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10.03" viewBox="0 0 10 10.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="562" y="1961.97" width="10" height="10.03" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#353535"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="current_slider" data-name="current slider" class="cls-1" d="M562,1966.98l5-5,5,5-5,5.01Z" transform="translate(-562 -1961.97)"/>
+</svg>

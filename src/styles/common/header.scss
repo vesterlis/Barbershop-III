@@ -1,0 +1,651 @@
+@import "../mixins/mixins";
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    min-height: 720px;
+    @include padding-margin-clear;
+
+    background-color: #000000;
+    background-image: url("../img/back-desktop.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+
+    @include media-tablet {
+        min-height: 530px;
+
+        background-image: url("../img/back-tablet.jpg");
+
+        @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+            background-image: url("../img/back-tablet@2x.jpg");
+            //это ширина картинки в "натуральную" величину 
+            background-size: 1299px auto;
+        }
+    }
+
+    @include media-mobile {
+        min-height: 0;
+        @include padding-margin-clear;
+
+        background-image: none;
+    }
+}
+
+.headerNavigation {
+    width: 100%;
+    height: 70px;
+    @include padding-margin-clear;
+
+    background-color: black;
+
+    &__toggle {
+        display: none;
+    }
+
+    @include media-mobile {
+        order: 2;
+        height: 51px;
+    }
+}
+
+.wrapperHeader {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+
+    @include media-tablet {
+        margin: 0 8.4%;
+    }
+
+    @include media-mobile {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 320px;
+        min-height: 51px;
+        margin: 0 auto;
+
+        background-color: #826550;
+    }
+}
+
+.navMenu {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include padding-margin-clear;
+
+    list-style: none;
+
+    &__item {
+        flex-grow: 1;
+    }
+
+    &__item--active {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 30px;
+            bottom: -3px;
+            left: 30px;
+
+            height: 3px;
+
+            background: #826560;
+        }
+
+        @include media-tablet {
+
+            &--active::after {
+                left: 0px;
+            }
+        }
+    }
+
+    &__link {
+        @include common-menu-link;
+
+        @include media-tablet {
+            margin-right: 32px;
+            @include padding-margin-clear;
+        }
+
+        @include media-mobile {
+            display: flex;
+            height: 50px;
+            align-items: center;
+            padding: 12px 21px;
+
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 24px;
+            text-transform: uppercase;
+
+            background-color: #826550;
+            border-bottom: 1px solid #6a4d38;
+            box-shadow: inset 5px 0 10px -5px #4b3b2f;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@include media-mobile {
+    .headerNavigation__navMenu {
+        display: block;
+    }
+
+    .navMenu__item--active::after {
+        display: none;
+    }
+
+    .headerNavigation--closed .headerNavigation__toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+
+        display: block;
+        width: 70px;
+        height: 50px;
+
+        background-color: #6a4d38;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &:hover,
+        &:active {
+            background-color: #624530;
+        }
+
+        &:active {
+            outline: none;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            right: 20px;
+            width: 35px;
+            height: 2px;
+
+            background-color: white;
+        }
+
+        &::before {
+            top: 13px;
+            left: 17px;
+        }
+
+        &::after {
+            top: 35px;
+            left: 17px;
+        }
+    }
+
+    .headerNavigation--closed .toggle__line {
+        position: absolute;
+        top: 24px;
+        left: 17px;
+        width: 35px;
+        height: 2px;
+
+        display: block;
+
+        background-color: white;
+    }
+
+    .headerNavigation--opened .headerNavigation__toggle {
+        position: absolute;
+        top: 0;
+        right: auto;
+        left: -70px;
+        z-index: 2;
+
+        display: block;
+        width: 70px;
+        height: 50px;
+
+        background-color: #6a4d38;
+
+        cursor: pointer;
+        border: none;
+        outline: none;
+
+        &::before,
+        &::after {
+            content: "";
+
+            position: absolute;
+            top: 24px;
+            left: 18px;
+
+            width: 36px;
+            height: 2px;
+
+            background-color: #ffffff;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover,
+        &:active {
+            background-color: #624530;
+        }
+
+        &:active {
+            outline: none;
+        }
+    }
+
+    .headerNavigation--closed .navMenu__item {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+
+        &--active a {
+            padding: 0 0 0 110px;
+        }
+    }
+
+    .headerNavigation--closed .enterAccount__link {
+        display: none;
+    }
+
+    .headerNavigation--opened .wrapperHeader {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 70px;
+        z-index: 10;
+    }
+}
+
+.enterAccount__link {
+    max-width: 130px;
+    background-color: yellowgreen;
+    @include common-menu-link;
+
+    &::before {
+        content: "";
+
+        display: inline-block;
+
+        @include same-size(16px);
+        margin: 0 19px 0 0;
+
+        background-image: url("../img/login-mobile.png");
+        background-size: cover;
+    }
+
+    @include media-tablet {
+        max-width: 130px;
+
+        @include padding-margin-clear;
+
+        font-size: 0;
+
+        background-color: yellowgreen;
+    }
+
+    @include media-mobile {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        padding: 12px 21px;
+
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 24px;
+        text-transform: none;
+
+        background-color: #6a4d38;
+        border-bottom: 1px solid #6a4d38;
+        box-shadow: inset 5px 0 10px -5px #4b3b2f;
+        box-sizing: border-box;
+    }
+}
+
+.navMenu__link[href]:focus,
+.navMenu__link[href]:hover,
+.enterAccount__link:focus,
+.enterAccount__link:hover {
+    color: #000000;
+    background-color: #ffffff;
+
+    @include media-tablet {
+        color: #534033;
+
+        background-color: #000000;
+    }
+
+    @include media-mobile {
+        background-color: #583921;
+    }
+}
+
+.navMenu__link[href]:active,
+.enterAccount__link:active {
+    background-color: #ffffff;
+    color: #9a9a9a;
+
+    @include media-tablet {
+        color: #9a9a9a;
+
+        background-color: #000000;
+    }
+
+    @include media-mobile {
+        color: #917d6f;
+
+        background-color: #392a1f;
+    }
+}
+
+.yourAccount-open {
+    display: block;
+}
+
+.yourAccountPosition {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 125px;
+
+    @include media-mobile {
+        top: 135px;
+    }
+
+    &__crossButton {
+        position: absolute;
+        top: 62px;
+        left: 537px;
+        @include same-size(26px);
+
+        border: none;
+
+        background-image: url("../img/cross-button.png");
+        background-color: transparent;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+}
+
+.yourAccount {
+    position: relative;
+    display: none;
+    width: 460px;
+    z-index: 10;
+
+    background-color: #f8f5f2;
+    box-shadow: 0 30px 50px 0 rgba(0, 1, 1, 0.75);
+
+    @include media-mobile {
+        width: 320px;
+    }
+
+    &__wrapper {
+        margin: 0 70px;
+
+        @include media-mobile {
+            margin: 0 20px;
+        }
+    }
+
+    &__form {
+        box-sizing: border-box;
+        @include padding-margin-clear;
+    }
+
+    &__title {
+        padding: 30px 0 22px 0;
+        margin: 0;
+        text-align: center;
+
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+
+    &__instruction {
+        @include padding-margin-clear;
+        @include standard-fs-lh;
+
+        text-align: center;
+    }
+
+    &__login {
+        margin: 27px 0 10px 0;
+        background-image: url("../img/User.png");
+        @include login-password;
+
+        @include media-mobile {
+            background-position-x: 235px;
+        }
+    }
+
+    &__password {
+        margin-bottom: 25px;
+        background-image: url("../img/Locked.png");
+        @include login-password;
+
+        @include media-mobile {
+            background-position-x: 235px;
+        }
+    }
+
+    &__login:focus,
+    &__login:hover,
+    &__password:focus,
+    &__password:hover {
+        outline: 1px solid #d5c9bd;
+    }
+
+    &__login:active,
+    &__password:active {
+        outline: 1px solid #999999;
+    }
+
+    &__rememberMe,
+    &__iForgot {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    &__rememberMeCheckbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    &__iForgot {
+        margin-right: 10px;
+    }
+
+    &__rememberMeCheckbox+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+
+    &__rememberMeCheckbox+label::before {
+        content: "";
+        @include same-size(31px);
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-right: 15px;
+
+        background-color: #ffffff;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+
+        border: 1px solid #e5ddd5;
+        box-sizing: border-box;
+    }
+
+    &__rememberMeCheckbox:not(:checked):not(:disabled)+label:focus::before,
+    &__rememberMeCheckbox:not(:checked):not(:disabled)+label:hover::before {
+        border-color: #eae5e2;
+    }
+
+    &__rememberMeCheckbox:not(:checked):not(:disabled):active+label::before {
+        border-color: #d5c9bd;
+        background-color: #d5c9bd;
+        background-image: url("../img/checked.png");
+        background-size: 22px 16px;
+    }
+
+    &__rememberMeCheckbox:checked+label::before {
+        background-image: url("../img/checked.png");
+        background-size: 22px 16px;
+        border: none;
+    }
+
+    &__rememberMeCheckbox:checked+label:focus::before,
+    &__rememberMeCheckbox:checked+label:hover::before {
+        border-color: #eae5e2;
+    }
+
+    &__rememberMeCheckbox:checked+label:active::before {
+        background-color: #d5c9bd;
+        background-image: none;
+        background-size: 22px 16px;
+        border: none;
+    }
+
+    &__buttons {
+        display: none;
+
+        @include media-mobile {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 35px;
+        }
+    }
+
+    &__theOneButton {
+        width: 98%;
+        height: 48px;
+        margin: 12px 0 57px 0;
+        padding: 0;
+
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 24px;
+
+        border: none;
+        background-color: #826550;
+        color: white;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    @include media-mobile {
+        &__button {
+            width: 130px;
+            height: 48px;
+
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 24px;
+
+            border: none;
+        }
+
+        &__enterButton {
+            color: white;
+
+            background-color: #826550;
+        }
+
+        &__enterButton:focus,
+        &__enterButton:hover {
+            background-color: #624530;
+        }
+
+        &__enterButton:active {
+            color: #917d6f;
+            outline: none;
+        }
+
+        &__closeButton {
+            font-weight: bold;
+
+            @include outline(#e5ddd5);
+            background-color: #f8f5f2;
+        }
+
+        &__closeButton:focus,
+        &__closeButton:hover {
+            @include outline(#eae5e2);
+        }
+
+        &__closeButton:active {
+            color: #e3dcd5;
+
+            @include outline(#ede4de);
+            background-color: #ede4de;
+        }
+    }
+}
+
+input::placeholder {
+    color: black;
+    font-size: 14px;
+    line-height: 27px;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.rememberForgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.headerLogo__img {
+    display: block;
+    margin: 57px auto 0 auto;
+
+    @include media-tablet {
+        margin: 39px auto 0 auto;
+    }
+
+    @include media-mobile {
+        order: 1;
+        margin: 29px auto 26px auto;
+    }
+
+}

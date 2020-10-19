@@ -1,0 +1,53 @@
+header.header
+  nav.headerNavigation.headerNavigation--closed
+    .wrapperHeader
+      button(class='headerNavigation__toggle' type='button')
+      ul.headerNavigation__navMenu.navMenu
+        li.navMenu__item.navMenu__item--active
+          a.navMenu__link Главная
+
+        li.navMenu__item
+          a(class='navMenu__link' href='#') Наши работы
+
+        li.navMenu__item
+          a(class='navMenu__link' href='#') Записаться
+
+        li.navMenu__item
+          a(class='navMenu__link' href='#') Контакты
+
+        li.navMenu__item
+          a(class='navMenu__link' href='#') HTML Academy
+
+
+      .headerNavigation__enterAccount.enterAccount
+          a(class='enterAccount__link' href='#') Войти
+
+    .yourAccount.yourAccountPosition
+      button(class='yourAccount__crossButton' type='button')
+      .yourAccount__wrapper
+        form(class='yourAccount__form' action='#' method='POST')
+          p.yourAccount__title Личный кабинет
+          p.yourAccount__instruction Введите свой логин и пароль, чтобы войти
+          label(class='visually-hidden' for='user-login') Логин
+          input(class='yourAccount__login' type='text' name='login' placeholder='Логин' id='user-login' autofocus)
+          label(class='visually-hidden' for='user-password') Пароль
+          input(class='yourAccount__password' type='password' name='password' placeholder='Пароль' id='user-password')
+
+          .youAccount__rememberForgot.rememberForgot
+            input(class='yourAccount__rememberMeCheckbox' type='checkbox' name='checkbox' id='rememberMe')
+            label(class='yourAccount__rememberMe' for='rememberMe') Запомните меня
+
+            a(class='yourAccount__iForgot' href='#') Я забыл пароль!
+          button(class='yourAccount__theOneButton yourAccount__button' type='submit' name='enterButton') Войти в личный кабинет
+
+          .yourAccount__buttons
+            button(class='yourAccount__enterButton yourAccount__button' type='submit' name='enterButton') Войти
+            button(class='yourAccount__closeButton yourAccount__button' type='button' value='Закрыть') Закрыть
+
+
+  .headerLogo
+    a(class='headerLogo__link' href='#')
+      picture
+        source(media='(max-width: 767px)' srcset='img/logotype-mobile.svg')
+        source(media='(max-width: 1299px)' srcset='max-width: 1299px')
+        img(class='headerLogo__img headerLogo__img--full' src='img/logotype-desktop.svg' alt='Логотип барбершопа Бородинский')

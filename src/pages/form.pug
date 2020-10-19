@@ -1,0 +1,20 @@
+extends common/layout
+
+block content
+    .appointment.appointmentPosition
+        .appointment__wrapper
+            form(class='appointment__form' action='#' method='POST')
+                .appointment__titleButton
+                    h2.appointment__title Запись на стрижку
+                    a(class='appointment__toMainPage button' href='#') на Главную
+
+                include includes/form/section-names
+                include includes/form/section-contacts
+                include includes/form/section-info
+                include includes/form/section-chooseBeard
+                include includes/form/section-extraServices
+                
+                button(class='appointment__sendApplication' type='submit' name='send') Отправить заявку
+
+    include includes/form/block-failure
+    include includes/form/block-success

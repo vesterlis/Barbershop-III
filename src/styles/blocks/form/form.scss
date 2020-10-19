@@ -1,0 +1,584 @@
+.appointment {
+    position: relative;
+    width: 1200px;
+    z-index: 10;
+    background-color: #f8f5f2;
+
+    @include media-tablet {
+        width: 768px;
+    }
+
+    @include media-mobile {
+        width: 320px;
+    }
+
+    &__wrapper {
+        margin: 0 120px;
+
+        @include media-tablet {
+            margin: 0 64px;
+        }
+
+        @include media-mobile {
+            margin: 0 20px;
+        }
+    }
+
+    &__form {
+        padding: 54px 0 87px 0;
+        box-sizing: border-box;
+
+        @include media-mobile {
+            padding: 34px 0 39px 0;
+        }
+    }
+
+    &__titleButton {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-mobile {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+
+        @include padding-margin-clear;
+
+        font-size: 40px;
+        font-weight: bold;
+        line-height: normal;
+        color: black;
+        text-transform: uppercase;
+
+        @include media-mobile {
+            font-size: 30px;
+        }
+    }
+
+    &__toMainPage {
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__names {
+        display: flex;
+        margin: 67px 0 35px 0;
+
+        @include media-tablet {
+            margin-bottom: 35px;
+        }
+
+        @include media-mobile {
+            flex-direction: column;
+            margin: 34px 0 32px 0;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        margin-bottom: 35px;
+
+        @include media-tablet {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include media-mobile {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.firstName,
+.secondName,
+.middleName {
+    width: 293px;
+
+}
+
+.firstName,
+.secondName,
+.middleName,
+.phone,
+.email {
+    height: 68px;
+    margin: 0;
+    padding-left: 17px;
+
+    outline: 1px solid #e5ddd5;
+    border: none;
+
+    @include media-mobile {
+        width: auto;
+        height: 48px;
+    }
+}
+
+.firstName:focus,
+.secondName:focus,
+.middleName:focus,
+.phone:focus,
+.email:focus,
+.info:focus,
+.firstName:hover,
+.secondName:hover,
+.middleName:hover,
+.phone:hover,
+.email:hover,
+.info:hover {
+    outline: 1px solid #d5c9bd;
+}
+
+.firstName:active,
+.secondName:active,
+.middleName:active,
+.phone:active,
+.email:active,
+.info:active {
+    outline: 1px solid #999999;
+}
+
+.appointment__firstName,
+.appointment__secondName,
+.appointment__phone {
+    margin-right: 30px;
+
+    @include media-tablet {
+        margin: 0;
+    }
+
+    @include media-mobile {
+        margin-bottom: 6px;
+        margin-right: 0;
+    }
+}
+
+.appointment__phone {
+
+    @include media-tablet {
+        margin-bottom: 35px;
+    }
+
+    @include media-mobile {
+        margin-bottom: 6px;
+    }
+}
+
+.phone,
+.email {
+    width: 460px;
+
+    @include media-tablet {
+        width: auto;
+    }
+
+    @include media-mobile {
+        width: auto;
+    }
+}
+
+.info {
+    width: 100%;
+    padding: 25px 0 0 25px;
+
+    outline: 1px solid #e5ddd5;
+    border: none;
+    box-sizing: border-box;
+
+    @include media-mobile {
+        padding: 16px 0 0 17px;
+    }
+}
+
+.appointment__info {
+    margin: 0;
+}
+
+.appointmentChooseBeard {
+    padding: 0;
+    margin: 75px 0 62px 0;
+
+    @include media-tablet {
+        margin: 58px 0 62px 0;
+    }
+
+    @include media-mobile {
+        margin: 43px 0 49px 0;
+    }
+}
+
+.inner-title {
+    display: flex;
+    align-items: center;
+
+    @include padding-margin-clear;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: normal;
+
+    @include media-mobile {
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        flex-grow: 1;
+        flex-shrink: 0;
+        width: auto;
+        height: 1px;
+        background-color: #e5ddd5;
+
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &::before {
+        margin-right: 39px;
+
+        @include media-tablet {
+            margin-right: 30px;
+        }
+    }
+
+    &::after {
+        margin-left: 39px;
+
+        @include media-tablet {
+            margin-left: 30px;
+        }
+    }
+}
+
+.beards__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 51px 0 0 0;
+
+    @include media-mobile {
+        margin: 42px 0 0 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+.beards__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include padding-margin-clear;
+
+    @include media-mobile {
+        margin: 0 0 30px 0;
+        width: 30%;
+    }
+
+    &:first-child {
+        margin-left: 46px;
+
+        @include media-mobile {
+            margin-left: 23px;
+        }
+    }
+
+    &:nth-child(4) {
+
+        @include media-mobile {
+            margin-left: 23px;
+        }
+    }
+
+    &:last-child {
+        margin-right: 50px;
+
+        @include media-mobile {
+            margin: none;
+        }
+    }
+}
+
+.chooseBeard__radio,
+.chooseBeard__label {
+    margin: 0 auto 30px auto;
+}
+
+.wiseman {
+
+    @include media-mobile {
+        margin: 0;
+    }
+}
+
+.appointmentExtraServices {
+
+    @include padding-margin-clear;
+
+
+    &__title {
+        margin: 0 0 69px 0;
+
+        @include media-mobile {
+            margin: 0 0 38px 0;
+        }
+    }
+}
+
+.extraServices__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include media-mobile {
+        flex-direction: column;
+    }
+}
+
+.extraServices__item {
+    width: 33%;
+    margin: 0 0 47px 0;
+
+    @include media-tablet {
+        width: 50%;
+    }
+
+    @include media-mobile {
+        width: auto;
+        margin: 0 0 20px 0;
+    }
+}
+
+.chooseBeard__label,
+.extraServices__label {
+    font-size: 24px;
+    line-height: 30px;
+
+    @include media-mobile {
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+.extraServices__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.extraServices__checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.extraServices__checkbox+label::before {
+    content: "";
+
+    width: 31px;
+    height: 31px;
+    margin-right: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    border: 1px solid #e5ddd5;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    box-sizing: border-box;
+}
+
+.extraServices__checkbox:not(:checked):not(:disabled)+label:focus::before {
+    border-color: #eae5e2;
+}
+
+.extraServices__checkbox:not(:checked):not(:disabled)+label:hover::before {
+    border-color: #eae5e2;
+}
+
+.extraServices__checkbox:not(:checked):not(:disabled):active+label::before {
+    border-color: #d5c9bd;
+    background-color: #d5c9bd;
+    background-image: url('img/checked.png');
+    background-size: 22px 16px;
+}
+
+.extraServices__checkbox:checked+label::before {
+    background-image: url('img/checked.png');
+    background-size: 22px 16px;
+    border: none;
+}
+
+.extraServices__checkbox:checked+label:focus::before {
+    border-color: #eae5e2;
+}
+
+.extraServices__checkbox:checked+label:hover::before {
+    border-color: #eae5e2;
+}
+
+.extraServices__checkbox:checked+label:active::before {
+    background-color: #d5c9bd;
+    background-image: none;
+    background-size: 22px 16px;
+    border: none;
+}
+
+@include media-mobile {
+    .color-beard {
+        order: 0;
+    }
+
+    .curl-mustache {
+        order: 1;
+    }
+
+    .comb-beard {
+        order: 2;
+    }
+
+    .cut-templs {
+        order: 3;
+    }
+
+    .remove-gray {
+        order: 4;
+    }
+
+    .polish-baldness {
+        order: 5;
+    }
+}
+
+.appointment__sendApplication {
+    width: 100%;
+    height: 70px;
+    margin: 33px 0 0 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    border: none;
+    background-color: #826550;
+    color: white;
+
+    @include media-mobile {
+        margin: 17px 0 0 0;
+        height: 50px;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.failurePopUp__button,
+.successPopUp__button {
+    height: 50px;
+    color: #ffffff;
+    background-color: #826550;
+}
+
+.failurePopUp__button {
+    width: 150px;
+    margin: 36px auto 0 auto;
+
+    @include media-mobile {
+        width: 180px;
+    }
+}
+
+.successPopUp__button {
+    width: auto;
+    margin-top: 36px;
+
+    @include media-mobile {
+        margin: 36px auto 0 auto;
+        padding: 0 38px 0 36px;
+    }
+}
+
+.appointment__sendApplication:focus,
+.appointment__title.appointment__sendApplication:hover,
+.failurePopUp__button:focus,
+.failurePopUp__button:hover,
+.success__button:focus,
+.successPopUp__button:hover {
+    background-color: #6a4d38;
+    outline: none;
+}
+
+.appointment__sendApplication:active,
+.failurePopUp__button:active,
+.successPopUp__button:active {
+    background-color: #6a4d38;
+    color: #978374;
+    outline: none;
+}
+
+.appointment__sendApplication:disabled,
+.failurePopUp__button:disabled,
+.successPopUp__button:disabled {
+    background-color: #aeaeae;
+    outline: none;
+}
+
+.failurePopUp,
+.successPopUp {
+    height: 317px;
+    padding: 60px 0 47px 0;
+    box-sizing: border-box;
+    box-shadow: 0 30px 50px 0 rgba(0, 1, 1, 0.75);
+    background-color: #ffffff;
+}
+
+.failurePopUp {
+    width: 320px;
+}
+
+.successPopUp {
+    width: 460px;
+
+    @include media-mobile {
+        width: 320px;
+    }
+}
+
+.popUp__wrapper--failure,
+.popUp__wrapper--success {
+    display: flex;
+    flex-direction: column;
+}
+
+.popUp__wrapper--success {
+    margin: 0 70px;
+
+    @include media-mobile {
+        margin: 0;
+    }
+}
+
+.failurePopUp__title,
+.successPopUp__title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.failurePopUp_text,
+.successPopUp_text {
+
+    @include padding-margin-clear;
+
+    @include standard-fs-lh;
+
+    text-align: center;
+}

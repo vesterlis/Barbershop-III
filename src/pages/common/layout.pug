@@ -1,0 +1,20 @@
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(charset="utf-8")
+            title Барбершоп Бородинский
+            meta(content="width=device-width, initial-scale=1" name="viewport")
+            meta(content="ie=edge" http-equiv="x-ua-compatible")
+            link(rel="stylesheet" href="css/style.min.css")
+            link(href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet")
+    body
+        block header
+            include header  
+        block content
+        block footer
+            include footer
+        block scripts
+            script(src='js/main.min.js')
+
+            //-не совсем поняла, зачем для block header и block footer прописаны include. У нас для них в структуре проекта, вроде бы, нет отдельной папки с includes

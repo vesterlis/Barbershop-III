@@ -1,0 +1,191 @@
+.wing-advantages {
+    @include media-mobile {
+        border-top: 12vw solid #242424;
+    }
+}
+
+.news {
+    position: relative;
+
+    margin: 0;
+    padding: 125px 0 42px 0;
+
+    background-color: #f6f3f0;
+
+    @include media-tablet {
+        padding: 85px 0 42px 0;
+    }
+
+    @include media-mobile {
+        padding: 90px 0 28px 0;
+    }
+
+    &__title {
+        @include subtitle;
+
+        @include media-tablet {
+            @include padding-margin-clear;
+        }
+
+        @include media-mobile {
+            display: inline-block;
+            margin: 0 auto;
+
+            font-size: 30px;
+            line-height: normal;
+        }
+    }
+
+    &__list {
+        display: flex;
+
+        @include padding-margin-clear;
+
+        @include media-mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+
+        width: 33.333%;
+        margin: 0;
+        padding: 0 4%;
+        box-sizing: border-box;
+
+        @include media-tablet {
+            width: 50%;
+        }
+
+        @include media-mobile {
+            width: auto;
+            margin: 0;
+        }
+    }
+
+    &__item:not(:last-child) {
+        @include media-mobile {
+            padding: 23px 0 21px 0;
+            margin: 0;
+        }
+    }
+
+    &__item:first-child {
+        @include media-mobile {
+            border-bottom: 1px solid #eae5e2;
+        }
+    }
+
+    &__item:not(:nth-child(1)):not(:nth-child(2)) {
+        @include media-tablet {
+            display: none;
+        }
+    }
+
+    &__item:hover,
+    &__item:focus {
+        color: #d7cdc5;
+    }
+
+    &__item:active {
+        color: #cdc3ba;
+    }
+
+    &__flagDate {
+        position: relative;
+    }
+
+    &__flagBackground {
+        @include same-size(50px);
+
+        margin: 10px 0 0 0;
+        padding: 5px 0 0 0;
+
+        background-color: #000000;
+        color: white;
+        text-align: center;
+    }
+
+    &__flagBottom {
+        position: absolute;
+    }
+
+    &__day {
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+
+    &__text {
+        padding: 0;
+        margin: 0 0 0 20px;
+
+        @include standard-fs-lh;
+        color: #000000;
+
+        text-decoration: none;
+    }
+
+    &__item:hover,
+    &__item:focus {
+        color: #d7cdc5;
+        text-decoration: underline;
+    }
+
+    &__text:active {
+        color: #cdc3ba;
+        text-decoration: underline;
+    }
+
+    &__titleButton {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 60px 0;
+
+        @include media-mobile {
+            @include padding-margin-clear;
+        }
+    }
+
+    &__showAll--top {
+        @include media-mobile {
+            display: none;
+        }
+    }
+
+    &__showAll--mobile {
+        display: none;
+
+        @include media-mobile {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__showAll--top:focus,
+    &__showAll--top:hover {
+        @include outline(#eae5e2);
+    }
+
+    &__showAll--top:active {
+        @include outline(#ede4de);
+        background-color: #ede4de;
+        color: #e3dcd5;
+    }
+}
+
+.close-new {
+    @include media-mobile {
+        display: none;
+    }
+}
+
+.news__line {
+    @include media-mobile {
+        @include padding-margin-clear;
+
+        background-color: #f6f3f0;
+    }
+}

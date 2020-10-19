@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11.03" viewBox="0 0 11 11.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-opacity: 0;
+        stroke: #353535;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="slider_indicator" data-name="slider indicator" class="cls-1" d="M628,1966.98l5-5,5,5-5,5.01Z" transform="translate(-627.5 -1961.47)"/>
+</svg>
