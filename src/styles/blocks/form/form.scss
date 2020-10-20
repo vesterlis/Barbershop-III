@@ -1,15 +1,19 @@
 .appointment {
     position: relative;
-    width: 1200px;
+    width: auto;
     z-index: 10;
     background-color: #f8f5f2;
+    top: -300px;
+    margin: 0 auto;
 
     @include media-tablet {
-        width: 768px;
+        width: auto;
+        top: -200px;
     }
 
     @include media-mobile {
-        width: 320px;
+        width: auto;
+        top: 0;
     }
 
     &__wrapper {
@@ -66,6 +70,7 @@
 
     &__names {
         display: flex;
+        flex-grow: 1;
         margin: 67px 0 35px 0;
 
         @include media-tablet {
@@ -80,6 +85,7 @@
 
     &__contacts {
         display: flex;
+        flex-grow: 1;
         margin-bottom: 35px;
 
         @include media-tablet {
@@ -99,14 +105,29 @@
 .secondName,
 .middleName {
     width: 293px;
-
 }
+
+@include media-mobile {
+    .firstName {
+        order: 2;
+    }
+
+    .secondName {
+        order: 1;
+    }
+
+    .middleName {
+        order: 3;
+    }
+}
+
 
 .firstName,
 .secondName,
 .middleName,
 .phone,
 .email {
+    flex-grow: 1;
     height: 68px;
     margin: 0;
     padding-left: 17px;
@@ -222,6 +243,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+    font-weight: normal;
     line-height: normal;
 
     @include media-mobile {
@@ -466,7 +488,7 @@
     margin: 33px 0 0 0;
     padding: 0;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 24px;
     line-height: 30px;
     border: none;

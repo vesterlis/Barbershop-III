@@ -1,5 +1,6 @@
 .pricelist {
     position: relative;
+    top: -300px;
     width: auto;
     z-index: 10;
 
@@ -7,6 +8,7 @@
 
     @include media-mobile {
         width: 320px;
+        top: 0;
     }
 
 

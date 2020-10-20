@@ -1,5 +1,6 @@
 .ourWorks {
     position: relative;
+    top: -300px;
     width: auto;
     z-index: 10;
     padding: 54px 0 87px 0;
@@ -8,10 +9,11 @@
     background-color: #f8f5f2;
 
     @include media-tablet {
-        width: auto;
+        top: -200px;
     }
 
     @include media-mobile {
+        top: 0;
         width: 320px;
         padding: 34px 0 34px 0;
     }
