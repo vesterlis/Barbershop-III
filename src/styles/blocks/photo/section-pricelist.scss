@@ -1,3 +1,48 @@
+.wing--middle {
+    display: none;
+
+    @include media-tablet {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+
+        border-top: 7vw solid #f8f5f2;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+    }
+
+    @include media-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+        border-top: 7vw solid #f8f5f2;
+        border-left: 160px solid transparent;
+        border-right: 160px solid transparent;
+    }
+}
+
+.wing--bottom {
+    display: none;
+
+    @include media-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 794px;
+        z-index: 1000;
+        border-top: 7vw solid #353535;
+        border-left: 160px solid transparent;
+        border-right: 160px solid transparent;
+    }
+}
+
 .pricelist {
     position: relative;
     top: -300px;
@@ -9,8 +54,8 @@
     @include media-mobile {
         width: 320px;
         top: 0;
+        margin: 0 auto;
     }
-
 
     &__wrapper {
         margin: 0 10%;

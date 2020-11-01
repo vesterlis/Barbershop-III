@@ -1,3 +1,19 @@
+.wing--top {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -7vw;
+    z-index: 1000;
+
+    border-top: 7vw solid transparent;
+    border-left: 50vw solid #f8f5f2;
+    border-right: 50vw solid #f8f5f2;
+
+    @include media-mobile {
+        display: none;
+    }
+}
+
 .ourWorks {
     position: relative;
     top: -300px;
@@ -10,12 +26,14 @@
 
     @include media-tablet {
         top: -200px;
+        padding: 54px 0 160px 0;
     }
 
     @include media-mobile {
         top: 0;
         width: 320px;
         padding: 34px 0 34px 0;
+        margin: 0 auto;
     }
 
     &__wrapper {

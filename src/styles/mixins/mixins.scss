@@ -61,3 +61,29 @@
     width: $width;
     height: $width;
 }
+
+/*
+@mixin wing ($top-desktop, $border-top-desktop, $border-side-color-desktop, $border-top-tablet, $top-mobile, $border-top-mobile, $border-side-color-mobile) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $top-desktop;
+    z-index: 1000;
+
+    border-top: $border-top-desktop;
+    border-left: 50vw solid $border-side-color-desktop;
+    border-right: 50vw solid $border-side-color-desktop;
+
+    @include media-tablet {
+        top: $top-desktop;
+        border-top: $border-top-tablet;
+    }
+
+    @include media-mobile {
+        top: $top-mobile;
+        border-top: $border-top-mobile;
+        border-left: 160px solid $border-side-color-mobile;
+        border-right: 160px solid $border-side-color-mobile;
+    }
+}
+*/
