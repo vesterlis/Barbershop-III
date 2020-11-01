@@ -1,12 +1,13 @@
 .feedback {
     margin: 0;
-    padding: 37px 0 46px 0;
+    padding: 37px 0 56px 0;
 
     border-top: 1px solid #c9bdb1;
     background-color: #f6f3f0;
 
     @include media-tablet {
         position: relative;
+        padding: 37px 0 71px 0;
     }
 
     @include media-mobile {
@@ -190,8 +191,9 @@
     transform: rotate(45deg);
     @include same-size(20px);
     border: 1px solid #878684;
+    z-index: 1000;
 
     &:not(:last-child) {
-        margin: 0 23px 0 0;
+        margin: 0 23px 20px 0;
     }
 }

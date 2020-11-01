@@ -6,11 +6,21 @@
     display: none;
 
     @include media-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index: 1000;
+
         border-top: 12vw solid #f8f5f2;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
     }
 }
 
 .footer {
+    position: relative;
     color: white;
     background-color: #292929;
 
@@ -42,7 +52,7 @@
     @include media-mobile {
         flex-direction: column;
         margin: 0;
-        padding: 100px 0 24px 0;
+        padding: 80px 0 24px 0;
 
         text-align: center;
     }
@@ -208,6 +218,7 @@
     @include media-tablet {
         display: flex;
         width: auto;
+        margin: 36px 0 0 0;
     }
 
     @include media-mobile {

@@ -4,10 +4,10 @@
 header {
     display: flex;
     flex-direction: column;
-    min-height: 720px;
+    min-height: 850px;
     @include padding-margin-clear;
 
-    background-color: #000000;
+    background-color: #242424;
     background-image: url("../img/back-desktop.jpg");
     background-repeat: no-repeat;
     background-position: center 0;
@@ -35,7 +35,7 @@ header {
 }
 
 .headerNavigation {
-    width: 100%;
+    width: auto;
     height: 70px;
     @include padding-margin-clear;
 
@@ -65,7 +65,6 @@ header {
 
         display: flex;
         flex-direction: column;
-        width: 100%;
         min-width: 320px;
         min-height: 51px;
         margin: 0 auto;
@@ -83,6 +82,10 @@ header {
     @include padding-margin-clear;
 
     list-style: none;
+
+    @include media-mobile {
+        width: auto;
+    }
 
     &__item {
         flex-grow: 1;
@@ -211,7 +214,7 @@ header {
 
     .headerNavigation--opened .headerNavigation__toggle {
         position: absolute;
-        top: 0;
+        top: 0px;
         right: auto;
         left: -70px;
         z-index: 2;
@@ -262,11 +265,13 @@ header {
         display: none;
 
         &--active {
-            display: block;
+            display: flex;
+            justify-content: center;
         }
 
         &--active a {
-            padding: 0 0 0 110px;
+            border-bottom: none;
+            box-shadow: none;
         }
     }
 
@@ -276,7 +281,7 @@ header {
 
     .headerNavigation--opened .wrapperHeader {
         position: absolute;
-        top: 0;
+        top: 85px;
         right: 0;
         left: 70px;
         z-index: 1000;
@@ -313,6 +318,7 @@ header {
     @include media-mobile {
         display: flex;
         height: 50px;
+        max-width: none;
         align-items: center;
         padding: 12px 21px;
 

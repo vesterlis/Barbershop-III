@@ -1,4 +1,13 @@
 .wing-advantages {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    border-top: 6vw solid #353535;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+
     @include media-mobile {
         border-top: 12vw solid #242424;
     }
@@ -8,12 +17,12 @@
     position: relative;
 
     margin: 0;
-    padding: 125px 0 42px 0;
+    padding: 155px 0 42px 0;
 
     background-color: #f6f3f0;
 
     @include media-tablet {
-        padding: 85px 0 42px 0;
+        padding: 120px 0 42px 0;
     }
 
     @include media-mobile {
@@ -38,6 +47,7 @@
 
     &__list {
         display: flex;
+        justify-content: space-between;
 
         @include padding-margin-clear;
 
@@ -52,7 +62,7 @@
 
         width: 33.333%;
         margin: 0;
-        padding: 0 4%;
+        padding: 0 4% 0 0;
         box-sizing: border-box;
 
         @include media-tablet {
@@ -70,6 +80,10 @@
             padding: 23px 0 21px 0;
             margin: 0;
         }
+    }
+
+    &__item:last-child {
+        padding: 0;
     }
 
     &__item:first-child {
@@ -142,7 +156,7 @@
     &__titleButton {
         display: flex;
         justify-content: space-between;
-        margin: 0 0 60px 0;
+        margin: 0 0 54px 0;
 
         @include media-mobile {
             @include padding-margin-clear;
