@@ -101,6 +101,29 @@
     }
 }
 
+input::placeholder,
+textarea::placeholder {
+    @include standard-fs-lh;
+}
+
+textarea {
+    resize: none; //убираем уголок ресайза (правый нижний)
+    overflow: auto; //убираем неактивные полосы прокрутки в IE
+}
+
+// Пришлось продублировать font-family и color, которые уже заданы в global, так как textarea почему-то не реагировал на них
+textarea::placeholder {
+    font-family: "PT Sans Narrow", sans-serif;
+    color: #000000;
+    @include standard-fs-lh;
+}
+
+//placeholder исчезает в textarea в фокусе и в состоянии active
+textarea:focus::placeholder,
+textarea:active::placeholder {
+    color: transparent;
+}
+
 .firstName,
 .secondName,
 .middleName {
@@ -214,6 +237,7 @@
 
     @include media-mobile {
         padding: 16px 0 0 17px;
+        height: 112px;
     }
 }
 
@@ -414,9 +438,6 @@
 
     border: 1px solid #e5ddd5;
     background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
     box-sizing: border-box;
 }
 
@@ -431,14 +452,18 @@
 .extraServices__checkbox:not(:checked):not(:disabled):active+label::before {
     border-color: #d5c9bd;
     background-color: #d5c9bd;
-    background-image: url('img/checked.png');
+    background-image: url('../img/checked.png');
     background-size: 22px 16px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .extraServices__checkbox:checked+label::before {
-    background-image: url('img/checked.png');
+    background-image: url('../img/checked.png');
     background-size: 22px 16px;
-    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: #eae5e2;
 }
 
 .extraServices__checkbox:checked+label:focus::before {
