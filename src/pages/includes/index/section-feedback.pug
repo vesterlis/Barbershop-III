@@ -1,52 +1,53 @@
 section.feedback
-        .wrapper-mobile.wrapperMain
-          .feedback__titleButton
-            h2.feedback__title Отзывы о нас
-            a(class='feedback__giveFeedback button' href='#') Оставить свой
+  span.wing.wing-feedback
+  .wrapper-mobile.wrapperMain
+    .feedback__titleButton
+      h2.feedback__title Отзывы о нас
+      a(class='feedback__giveFeedback button' href='#') Оставить свой
 
-          .feedback__wrapper.slider
-            button.feedback__leftArrow.feedback__arrowButton
-              span.feedbackArrow__text.feedbackArrow__text--left Предыдущий слайд
-            .sliderwrapper
-              .feedback__list.slider__list
+    .feedback__wrapper.slider
+      button.feedback__leftArrow.feedback__arrowButton
+        span.feedbackArrow__text.feedbackArrow__text--left Предыдущий слайд
+      .sliderwrapper
+        .feedback__list.slider__list
 
-                blockquote.feedback__item.slider__item
-                  p.feedback__authorPhoto
-                    picture
-                      source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
-                      source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
-                      img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
+          blockquote.feedback__item.slider__item
+            p.feedback__authorPhoto
+              picture
+                source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
+                source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
+                img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
 
-                  .feedback__text
-                    b.feedback__authorsName Трэвис Баркер
-                    p.feedback__comment Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!
+            .feedback__text
+              b.feedback__authorsName Трэвис Баркер
+              p.feedback__comment Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!
 
-                blockquote.feedback__item.slider__item
-                  p.feedback__authorPhoto
-                    picture
-                      source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
-                      source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
-                      img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
+          blockquote.feedback__item.slider__item
+            p.feedback__authorPhoto
+              picture
+                source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
+                source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
+                img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
 
-                  .feedback__text
-                    b.feedback__authorsName 22222 222222
-                    p.feedback__comment Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!
+            .feedback__text
+              b.feedback__authorsName 22222 222222
+              p.feedback__comment Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!
 
-                blockquote.feedback__item.slider__item
-                  p.feedback__authorPhoto
-                    picture
-                      source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
-                      source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
-                      img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
+          blockquote.feedback__item.slider__item
+            p.feedback__authorPhoto
+              picture
+                source(media='(max-width: 767px)' srcset='img/barker-mobile.jpg 1x, img/barker-mobile@2x.jpg 2x')
+                source(media='(max-width: 1299px)' srcset='img/barker-tablet.jpg 1x, img/barker-tablet@2x.jpg 2x')
+                img(class='feedback__authorImg' src='img/barker-desktop.jpg' srcset='img/barker-desktop@2x.jpg 2x' alt='Фото Трэвиса Баркера')
 
-                  .feedback__text
-                    b.feedback__authorsName 33333333 3333333
-                    p.feedback__comment Спасибо за лысину! 
+            .feedback__text
+              b.feedback__authorsName 33333333 3333333
+              p.feedback__comment Спасибо за лысину! 
                  
-            button.feedback__rightArrow.feedback__arrowButton
-              span.feedbackArrow__text.feedbackArrow__text--right Следующий слайд
+      button.feedback__rightArrow.feedback__arrowButton
+        span.feedbackArrow__text.feedbackArrow__text--right Следующий слайд
                        
-          .feedback__toggles.slider__toggles
-            button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв Трэвиса Баркера' id='slide1f')
-            button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 2' id='slide2f')
-            button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 3' id='slide3f')
+    .feedback__toggles.slider__toggles
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв Трэвиса Баркера' id='slide1f')
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 2' id='slide2f')
+      button(class='slider__toggle slider__toggle--active' type='button' aria-label='Отзыв 3' id='slide3f')

@@ -1,4 +1,23 @@
+.wing-feedback {
+    display: none;
+
+    @include media-mobile {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: -12vw;
+
+        border-top: 12vw solid #f6f3f0;
+        border-left: 50vw solid transparent;
+        border-right: 50vw solid transparent;
+    }
+}
+
 .feedback {
+    position: relative;
+    z-index: 1;
     margin: 0;
     padding: 37px 0 56px 0;
 
@@ -45,6 +64,7 @@
         width: 100%;
         display: flex;
         flex-shrink: 0;
+        flex-grow: 1;
         margin: 0;
 
         @include media-tablet {
@@ -73,9 +93,14 @@
 
     &__authorImg {
         vertical-align: top;
+
+        @include media-tablet {
+            border-radius: 50%;
+        }
     }
 
     &__text {
+        flex-grow: 1;
         min-height: 158px;
         padding: 35px 80px 0 75px;
 
